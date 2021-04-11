@@ -1,0 +1,43 @@
+#include<stdio.h> 
+long permutation(int n, int r); //排列的函數
+long combination(int n, int r); //組合的函數
+long factorial(int num);        //階層乘積的函數
+
+long permutation(int n, int r)
+{
+    return factorial(n) / factorial(n-r);  //排列的算式為n!/(n-r)!
+}
+
+long combination(int n, int r)
+{
+    return permutation(n, r) / factorial(r);  //組合的算式為n!/(n-r)!r!
+}
+
+long factorial(int num)  //做n階相乘
+{
+    long long fact = 1;  //設定變數為1
+
+    while(num > 0)
+    {
+        fact *= num;  //每次將n乘上變數
+        num--;  //做n=n-1
+    }
+
+    return fact;  //返回階乘結果
+}
+
+int main(void)
+{    
+    int n, r;//輸入n、r變數
+    printf("Permutation = n!/(n-r)!\nCombination = n!/(n-r)!r!\n");
+    printf("Enter n: ");  
+    scanf("%d", &n);
+
+    printf("Enter r: ");
+    scanf("%d", &r);
+
+    printf("Permutation = %ld\n", permutation(n, r));  //對n、r做排列印出結果
+    printf("Combination = %ld", combination(n, r));    //做組合印出結果
+
+    return 0;
+}
