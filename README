@@ -1,5 +1,8 @@
 輸入範例：
 
+
+
+
 /*排列組合 計算數量 in c */
 input
 
@@ -10,6 +13,12 @@ output
 Permutation = 60
 Combination = 10
 
+
+
+
+
+
+/* permutation and combination展示*/
 
 Enter the size of array :4
 1 2 3 4
